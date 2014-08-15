@@ -111,7 +111,7 @@
         };
         that.hint = null;
         that.hintValue = '';
-        that.selection = null;
+        that.selection = 'no-selection-made';
 
         // Initialize and set options:
         that.initialize();
@@ -443,7 +443,7 @@
                 query = that.getQuery(value),
                 index;
 
-            if (that.selection) {
+            if (that.selection || that.selection === 'no-selection-made')
                 that.selection = null;
                 (options.onInvalidateSelection || $.noop).call(that.element);
             }
